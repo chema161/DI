@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ episodeDetail?.name }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+    <p>Código: {{ episodeDetail?.episode }}</p>
+    <p>Fecha de emisión: {{ episodeDetail?.air_date }}</p>
+    <p>Personajes en el episodio: {{ episodeDetail?.characters?.length }}</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close()">Cerrar</button>
+</div>
