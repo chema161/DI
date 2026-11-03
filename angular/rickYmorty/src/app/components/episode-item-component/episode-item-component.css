@@ -1,0 +1,71 @@
+.episode-card {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #dce8df;
+	border-top: 4px solid #54a879;
+	border-radius: 8px;
+	background: linear-gradient(145deg, #ffffff 0%, #f5faf6 100%);
+	box-shadow: 0 3px 10px rgb(34 77 51 / 8%);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.episode-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 18px rgb(34 77 51 / 15%);
+}
+
+.episode-card .card-body {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1.25rem;
+}
+
+.episode-card .card-title {
+	margin-bottom: 0.75rem;
+	color: #233d2e;
+	font-weight: 700;
+}
+
+.episode-code {
+	margin: 0 0 1rem;
+	padding: 0.3rem 0.65rem;
+	border-radius: 999px;
+	background: #e4f3e9;
+	color: #28734a;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.episode-air-date {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	margin-bottom: 1.25rem;
+	color: #43564a;
+}
+
+.episode-air-date span {
+	color: #718176;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.episode-button {
+	margin-top: auto;
+	border-color: #318454;
+	background-color: #318454;
+	font-weight: 600;
+}
+
+.episode-button:hover {
+	border-color: #246a41;
+	background-color: #246a41;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.episode-card {
+		transition: none;
+	}
+}

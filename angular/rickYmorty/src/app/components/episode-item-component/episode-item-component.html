@@ -1,0 +1,8 @@
+<div class="card episode-card h-100">
+    <div class="card-body">
+        <h5 class="card-title">{{ episode()?.name }}</h5>
+        <h6 class="episode-code">{{ episode()?.episode }}</h6>
+        <p class="card-text episode-air-date"><span>Fecha de emisión</span>{{ episode()?.air_date }}</p>
+        <button type="button" class="btn btn-primary episode-button" (click)="emitEpisodeClicked()">Ver detalle</button>
+    </div>
+</div>
