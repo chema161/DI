@@ -1,0 +1,8 @@
+<div class="card h-100">
+    <img [src]="character()?.image" class="card-img-top" [alt]="character()?.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ character()?.name }}</h5>
+        <p class="card-text">{{ character()?.species }}</p>
+        <button type="button" class="btn btn-primary" (click)="emitCharacterClicked()">Ver detalle</button>
+    </div>
+</div>

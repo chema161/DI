@@ -1,0 +1,6 @@
+<div class="row">
+  @for (item of characterList(); track item.id) {
+    <app-character-item-component [character]="item"
+      (characterClicked)="openCharacterModal($event)"></app-character-item-component>
+  }
+</div>
