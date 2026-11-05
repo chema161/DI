@@ -1,0 +1,10 @@
+@if (peopleList().length === 0) {
+  <p>Cargando personajes...</p>
+}
+
+<div class="row">
+  @for (item of peopleList(); track item.url) {
+    <app-people-item-component [person]="item"
+      (personClicked)="openPeopleModal($event)"></app-people-item-component>
+  }
+</div>

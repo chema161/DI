@@ -1,0 +1,12 @@
+<div class="card h-100">
+    <div class="card-body">
+        <h5 class="card-title">{{ person()?.name }}</h5>
+        <p class="card-text">Año de nacimiento: {{ person()?.birth_year }}</p>
+
+        @if (person()?.gender !== 'n/a') {
+            <p class="card-text">Género: {{ person()?.gender }}</p>
+        }
+
+        <button type="button" class="btn btn-primary" (click)="emitPersonClicked()">Ver detalle</button>
+    </div>
+</div>
