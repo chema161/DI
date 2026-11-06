@@ -1,0 +1,35 @@
+<h2 class="mb-4">Vehicles</h2>
+
+@if (loading()) {
+  <div class="text-center py-5">
+    <div class="spinner-border" role="status"></div>
+  </div>
+} @else if (error()) {
+  <div class="alert alert-danger">{{ error() }}</div>
+} @else {
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    @for (vehicle of vehicles(); track vehicle.url) {
+      <div class="col">
+        <app-vehicle-item [vehicle]="vehicle" (selected)="openDetail($event)" />
+      </div>
+    }
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mt-4">
+    <button
+      class="btn btn-outline-primary"
+      [disabled]="page() === 1"
+      (click)="loadPage(page() - 1)"
+    >
+      Previous
+    </button>
+    <span>Page {{ page() }}</span>
+    <button
+      class="btn btn-outline-primary"
+      [disabled]="!hasNext()"
+      (click)="loadPage(page() + 1)"
+    >
+      Next
+    </button>
+  </div>
+}

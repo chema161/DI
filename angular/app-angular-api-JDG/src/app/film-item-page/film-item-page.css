@@ -1,0 +1,13 @@
+.opening-crawl {
+  white-space: pre-line;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+}

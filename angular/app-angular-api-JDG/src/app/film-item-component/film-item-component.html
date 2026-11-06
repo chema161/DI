@@ -1,0 +1,14 @@
+<a [routerLink]="['/films', id()]" class="film-link">
+  <div class="card h-100 shadow-sm film-card">
+    <div class="card-body">
+      <h5 class="card-title">{{ film().title }}</h5>
+      <h6 class="card-subtitle mb-3 text-body-secondary">Episode {{ film().episode_id }}</h6>
+      <ul class="list-unstyled mb-0">
+        <li><strong>Director:</strong> {{ film().director }}</li>
+        <li><strong>Producer:</strong> {{ film().producer }}</li>
+        <li><strong>Release date:</strong> {{ film().release_date }}</li>
+        <li><strong>Characters:</strong> {{ film().characters.length }}</li>
+      </ul>
+    </div>
+  </div>
+</a>

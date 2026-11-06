@@ -1,0 +1,18 @@
+<div
+  class="card h-100 shadow-sm vehicle-card"
+  role="button"
+  tabindex="0"
+  (click)="onSelect()"
+  (keydown.enter)="onSelect()"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{ vehicle().name }}</h5>
+    <h6 class="card-subtitle mb-3 text-body-secondary">{{ vehicle().model }}</h6>
+    <ul class="list-unstyled mb-0">
+      <li><strong>Manufacturer:</strong> {{ vehicle().manufacturer }}</li>
+      <li><strong>Class:</strong> {{ vehicle().vehicle_class }}</li>
+      <li><strong>Cost:</strong> {{ vehicle().cost_in_credits }} credits</li>
+      <li><strong>Crew:</strong> {{ vehicle().crew }}</li>
+    </ul>
+  </div>
+</div>

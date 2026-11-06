@@ -1,0 +1,46 @@
+<a routerLink="/films" class="btn btn-outline-secondary mb-4">&larr; Back to films</a>
+
+@if (loading()) {
+  <div class="text-center py-5">
+    <div class="spinner-border" role="status"></div>
+  </div>
+} @else if (error()) {
+  <div class="alert alert-danger">{{ error() }}</div>
+} @else if (film(); as f) {
+  <div class="card shadow-sm">
+    <div class="card-header">
+      <h3 class="mb-0">{{ f.title }}</h3>
+      <small class="text-body-secondary">Episode {{ f.episode_id }}</small>
+    </div>
+
+    <div class="card-body">
+      <p class="opening-crawl">{{ f.opening_crawl }}</p>
+
+      <dl class="row mb-0">
+        <dt class="col-sm-3">Director</dt>
+        <dd class="col-sm-9">{{ f.director }}</dd>
+
+        <dt class="col-sm-3">Producer</dt>
+        <dd class="col-sm-9">{{ f.producer }}</dd>
+
+        <dt class="col-sm-3">Release date</dt>
+        <dd class="col-sm-9">{{ f.release_date }}</dd>
+
+        <dt class="col-sm-3">Characters</dt>
+        <dd class="col-sm-9">{{ f.characters.length }}</dd>
+
+        <dt class="col-sm-3">Planets</dt>
+        <dd class="col-sm-9">{{ f.planets.length }}</dd>
+
+        <dt class="col-sm-3">Starships</dt>
+        <dd class="col-sm-9">{{ f.starships.length }}</dd>
+
+        <dt class="col-sm-3">Vehicles</dt>
+        <dd class="col-sm-9">{{ f.vehicles.length }}</dd>
+
+        <dt class="col-sm-3">Species</dt>
+        <dd class="col-sm-9">{{ f.species.length }}</dd>
+      </dl>
+    </div>
+  </div>
+}

@@ -1,0 +1,17 @@
+<h2 class="mb-4">Films</h2>
+
+@if (loading()) {
+  <div class="text-center py-5">
+    <div class="spinner-border" role="status"></div>
+  </div>
+} @else if (error()) {
+  <div class="alert alert-danger">{{ error() }}</div>
+} @else {
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    @for (film of films(); track film.url) {
+      <div class="col">
+        <app-film-item [film]="film" />
+      </div>
+    }
+  </div>
+}

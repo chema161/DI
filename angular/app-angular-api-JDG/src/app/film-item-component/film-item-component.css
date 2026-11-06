@@ -1,0 +1,16 @@
+.film-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.film-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.film-link:hover .film-card,
+.film-link:focus .film-card {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}

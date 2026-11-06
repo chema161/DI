@@ -1,0 +1,63 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ vehicle()?.name ?? 'Loading...' }}</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss()"
+  ></button>
+</div>
+
+<div class="modal-body">
+  @if (loading()) {
+    <div class="text-center py-4">
+      <div class="spinner-border" role="status"></div>
+    </div>
+  } @else if (error()) {
+    <div class="alert alert-danger mb-0">{{ error() }}</div>
+  } @else if (vehicle(); as v) {
+    <dl class="row mb-0">
+      <dt class="col-sm-5">Model</dt>
+      <dd class="col-sm-7">{{ v.model }}</dd>
+
+      <dt class="col-sm-5">Manufacturer</dt>
+      <dd class="col-sm-7">{{ v.manufacturer }}</dd>
+
+      <dt class="col-sm-5">Class</dt>
+      <dd class="col-sm-7">{{ v.vehicle_class }}</dd>
+
+      <dt class="col-sm-5">Cost (credits)</dt>
+      <dd class="col-sm-7">{{ v.cost_in_credits }}</dd>
+
+      <dt class="col-sm-5">Length</dt>
+      <dd class="col-sm-7">{{ v.length }}</dd>
+
+      <dt class="col-sm-5">Max speed</dt>
+      <dd class="col-sm-7">{{ v.max_atmosphering_speed }}</dd>
+
+      <dt class="col-sm-5">Crew</dt>
+      <dd class="col-sm-7">{{ v.crew }}</dd>
+
+      <dt class="col-sm-5">Passengers</dt>
+      <dd class="col-sm-7">{{ v.passengers }}</dd>
+
+      <dt class="col-sm-5">Cargo capacity</dt>
+      <dd class="col-sm-7">{{ v.cargo_capacity }}</dd>
+
+      <dt class="col-sm-5">Consumables</dt>
+      <dd class="col-sm-7">{{ v.consumables }}</dd>
+
+      <dt class="col-sm-5">Films</dt>
+      <dd class="col-sm-7">{{ v.films.length }}</dd>
+
+      <dt class="col-sm-5">Pilots</dt>
+      <dd class="col-sm-7">{{ v.pilots.length }}</dd>
+    </dl>
+  }
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.close()">
+    Close
+  </button>
+</div>
